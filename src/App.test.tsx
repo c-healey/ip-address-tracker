@@ -1,9 +1,10 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders IP Address', async() => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+ 
+  await expect(screen.getByText(/Loading/i)).toBeInTheDocument();
+  // await waitFor(() => expect(screen.getByText(/IP ADDRESS TRACKER/i)).toBeInTheDocument());
 });
