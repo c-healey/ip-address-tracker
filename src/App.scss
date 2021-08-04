@@ -61,6 +61,7 @@ $default-font-family: "Rubik", sans-serif;
     display: flex;
     flex-direction: row;
     padding-left: 0;
+    min-height:12rem;
     margin-bottom: 0;
     z-index:99;
     background-color:white;
@@ -97,7 +98,7 @@ $default-font-family: "Rubik", sans-serif;
   }
 
   & .ip-map-container {
-    transform: translateY(-98px);
+    transform: translateY(-6.25rem);
     padding:0;
   }
   & .ip-search{
