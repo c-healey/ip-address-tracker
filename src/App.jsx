@@ -74,7 +74,7 @@ function App() {
     <div className="App container-fluid d-flex flex-column align-items-center bg-dark">
       <header className="header container  d-flex flex-column align-items-center pt-4 px-0 bg-white">
         <h1 className="title mb-4">Ip address tracker</h1>
-        <search className="input-group mb-3 w-50">
+        <div className="input-group mb-3 w-50">
           <input
             type="text"
             className="form-control ip-search radius"
@@ -91,7 +91,7 @@ function App() {
             <i className="bi bi-chevron-right text-white"></i>
             
           </span>
-        </search>
+        </div>
 
         <div className="row ip-list-group border radius p-4 ">
           <div className="col-sm ip-list-group-item   ">
