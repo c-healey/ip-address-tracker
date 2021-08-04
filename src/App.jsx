@@ -93,7 +93,7 @@ function App() {
           </span>
         </search>
 
-        <detail className="row ip-list-group border radius p-4 ">
+        <div className="row ip-list-group border radius p-4 ">
           <div className="col-sm ip-list-group-item   ">
             <h2>IP Address</h2>
             <p>{selected && selected.ip}</p>
@@ -113,7 +113,7 @@ function App() {
             <h2>ISP</h2>
             <p>{selected && ` ${selected.isp}`}</p>
           </div>
-        </detail>
+        </div>
         </header>
         <main className="container ip-map-container row w-100">
           <GoogleMap
