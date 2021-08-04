@@ -71,13 +71,13 @@ function App() {
   if (!isLoaded) return <div>Loading maps</div>;
 
   return (
-    <div className="App container-fluid d-flex align-items-center bg-dark">
-      <div className="header container h-100 d-flex flex-column align-items-center pt-4 px-0 bg-white">
+    <div className="App container-fluid d-flex flex-column align-items-center bg-dark">
+      <header className="header container  d-flex flex-column align-items-center pt-4 px-0 bg-white">
         <h1 className="title mb-4">Ip address tracker</h1>
-        <div className="input-group mb-3 w-50">
+        <search className="input-group mb-3 w-50">
           <input
             type="text"
-            className="form-control radius"
+            className="form-control ip-search radius"
             placeholder="Search for any IP address or domain"
             aria-label="Ip Address or domain"
             aria-describedby="basic-addon2"
@@ -88,45 +88,34 @@ function App() {
             id="basic-addon2"
             onClick={() => handleIpify()}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-chevron-right"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill="white"
-                fillRule="evenodd"
-                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-              />
-            </svg>
+            <i className="bi bi-chevron-right text-white"></i>
+            
           </span>
-        </div>
+        </search>
 
-        <div className="row ip-list-group border radius p-4 ">
+        <detail className="row ip-list-group border radius p-4 ">
           <div className="col-sm ip-list-group-item   ">
-            <h6>IP Address</h6>
+            <h2>IP Address</h2>
             <p>{selected && selected.ip}</p>
           </div>
           <div className="col-sm ip-list-group-item">
-            <h6>location</h6>
+            <h2>location</h2>
             <p>
               {selected &&
                 `${selected.location.city} ${selected.location.region}  ${selected.location.postalCode}  ${selected.location.country}`}
             </p>
           </div>
           <div className="col-sm ip-list-group-item">
-            <h6>timezone</h6>
+            <h2>timezone</h2>
             <p>{selected && `UTC ${selected.location.timezone}`}</p>
           </div>
           <div className="col-sm ip-list-group-item">
-            <h6>ISP</h6>
+            <h2>ISP</h2>
             <p>{selected && ` ${selected.isp}`}</p>
           </div>
-        </div>
-        <div className="ip-map-container row w-100">
+        </detail>
+        </header>
+        <main className="container ip-map-container row w-100">
           <GoogleMap
             mapContainerStyle={mapContainerStyle}
             zoom={8}
@@ -156,8 +145,8 @@ function App() {
               );
             })}
           </GoogleMap>
-        </div>
-      </div>
+        </main>
+      
     </div>
   );
 }
